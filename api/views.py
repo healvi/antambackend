@@ -28,7 +28,7 @@ def students_list(request):
         file_url = fss.url(file)
         excel_data_df = pandas.read_excel(upload)
         thisisjson = excel_data_df.to_json(orient='records')
-        return Response({'file_url': thisisjson})
+        return Response({'data': json.dumps(thisisjson)})
 
 
 # @api_view(['PUT', 'DELETE'])
