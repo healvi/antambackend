@@ -1,5 +1,7 @@
 from django.urls import path, include
-from .views import students_list
+from .views import cluster_list, wa_blast, broadcast_list
 urlpatterns = [
-    path('users', students_list)
+    path('clusters', cluster_list),
+    path('broadcast', broadcast_list),
+    path('wablast', wa_blast)
 ]
