@@ -14,9 +14,6 @@ import json
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
 def cluster_list(request):
     if request.method == 'GET':
-        # data = User.objects.all()
-        # serializer = WablasSerializers(
-        #     data, context={'request': request}, many=True)
         return Response("Data")
     elif request.method == 'POST':
         # POST DATA CLUSTER
@@ -32,15 +29,10 @@ def broadcast_list(request):
         return Response("Data")
         # POST DATA BROACAST SEND ONE
     elif request.method == 'POST':
-        nama = request.data['nama']
-        number = request.data['number']
-        segmen = request.data['segmen']
-        return Response(request.data)
+        print(request.data)
+        return Response({"data": request.data})
         # POST DATA BROACAST SEND > ONE
     elif request.method == 'PUT':
-        nama = request.data['nama']
-        number = request.data['number']
-        segmen = request.data['segmen']
         return Response(request.data)
 
 
@@ -50,9 +42,6 @@ def wa_blast(request):
         return Response("Data")
         # POST DATA CLUSTER SEND ONE PERSON
     elif request.method == 'POST':
-        nama = request.data['nama']
-        number = request.data['number']
-        segmen = request.data['segmen']
         return Response()
         # POST DATA CLUSTER SEND  > ONE PERSON
     elif request.method == 'PUT':
